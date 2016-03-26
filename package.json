@@ -1,0 +1,29 @@
+{
+  "name": "Readily",
+  "version": "1.0.0",
+  "description": "Web Development and Marketing Website",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyfcabrera/readily.git"
+  },
+  "keywords": [
+    "web",
+    "design",
+    "social",
+    "media",
+    "marketing",
+    "app",
+    "development",
+    "wordpress"
+  ],
+  "author": "Danny Cabrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannyfcabrera/readily/issues"
+  },
+  "homepage": "https://github.com/dannyfcabrera/readily#readme"
+}
