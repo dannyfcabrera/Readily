@@ -1,0 +1,77 @@
+/*
+Theme Name: Readily
+Theme URI: http://bereadily.com
+Author: Danny Cabrera
+Text Domain: readily
+Domain Path: /languages
+Author URI: http://dannyfcabrera.com
+Description: Theme for Readily Website
+Version: 1.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Tags: one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, post-formats
+Text Domain: readily
+*/
+
+@import 'variables';
+
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+html {
+ 
+}
+
+body {
+ padding-top: 50px;
+ @include container-fixed();
+}
+
+.wrapper {
+  @include make-row();
+}
+
+
+/*
+*
+Navbar Styles 
+*
+*/
+
+.navbar-brand > img {
+  width: auto;
+  height: 100%;
+}
+
+.site-title {
+  margin: 0;
+}
+
+/*
+*
+Main Styles 
+*
+*/
+
+.home #main {
+  @include make-xs-column(12);
+}
+
+#main {
+  @include make-sm-column(8);
+}
+
+#sidebar {
+  @include make-sm-column(4);
+}
+
+/*
+*
+Footer Styles 
+*
+*/
+
+#footer {
+  @include make-xs-column(12);
+}
