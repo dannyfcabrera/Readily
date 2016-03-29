@@ -11,11 +11,20 @@ get_header(); ?>
   	<main role id="main" role="main">
 
   		<?php
-  		while ( have_posts() ) : the_post();
-  
-  			get_template_part( 'template-parts/content', 'page' );
-  
-  		endwhile;
+    	
+    	if ( is_front_page() ) :
+    	
+    	    get_template_part( 'template-parts/content', 'front-page' );
+    	
+    	else :
+    		
+    		while ( have_posts() ) : the_post();
+    
+    			get_template_part( 'template-parts/content', 'page' );
+    
+    		endwhile;
+  		
+  		endif;
   		?>
 
 		</main><!-- #main -->

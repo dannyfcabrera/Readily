@@ -47,6 +47,8 @@
 
 <body <?php body_class(); ?>>
   
+  <?php require get_template_directory() . '/inc/svg.php'; ?>
+  
   <a class="skip-link sr-only" href="#main"><?php esc_html_e( 'Skip to content', 'readily' ); ?></a>
   
   <div class="wrapper">
@@ -68,14 +70,18 @@
         				<h1 class="site-title">
                   <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
-                    <img width="122" height="40" alt="Readily Logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
+                    <svg width='122' height='40' class="logo">
+                      <use xlink:href="#site-logo" />
+                    </svg>
                   </a>
           		  </h1>
         			<?php else : ?>
         				<p class="site-title">
                   <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
-                    <img width="122" height="40" alt="Readily Logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
+                    <svg width='122' height='40' class="logo">
+                      <use xlink:href="#site-logo" />
+                    </svg>
                   </a>
           		  </p>
         			<?php endif; ?>
