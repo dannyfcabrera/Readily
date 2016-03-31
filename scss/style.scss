@@ -139,13 +139,23 @@ Front Page Styles
   .scene {
     @include make-sm-column(10);
     @include make-sm-column-offset(1);
+    overflow: hidden;
+    padding-top: 4%;
+    padding-bottom: 4%;
     min-height: calc(50vh - 25px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &:last-child {
+      padding-bottom: 8%;
+    }
     @media (min-width: $screen-sm-min) {
       flex-direction: row;
+      .graphic svg {
+        width: 300px;
+        height: 300px
+      }
     }
     &:nth-child(2n+2) {
       @media (min-width: $screen-sm-min) {
@@ -156,14 +166,18 @@ Front Page Styles
   }
   .graphic {
     @include make-sm-column(6);
-    img {
-      margin: 20px auto;
+    svg {
+      width: 200px;
+      height: 200px;
+      margin: 4% auto;
       display: block;
     }
   }
   .content {
     @include make-sm-column(6);
+    text-align: center;
     @media (min-width: $screen-sm-min) {
+      text-align: left;
       h2 {
         font-size: 40px;
       }
@@ -171,6 +185,75 @@ Front Page Styles
         font-size: 20px;
       }
     }
+  }
+}
+
+svg .gray-dark {
+  fill: $gray-dark;
+}
+
+svg .gray-light {
+  fill: $gray-light;
+}
+
+svg .gray-lighter {
+  fill: $gray-lighter;
+}
+
+svg .primary-color {
+  fill: $primary-color;
+}
+
+svg .light-color {
+  fill: $light-color;
+}
+
+svg .dark-color {
+  fill: $dark-color;
+}
+
+#icon-simple-website {
+  #b1-top {
+    fill: $gray-dark;
+  }
+  #b1-address, #b1-window, #b1-search {
+    fill: $gray-light;
+  }
+  #b1-bg, [id*="wireframe"] {
+    fill: $gray-lighter;
+  }
+  [id*="button"] {
+    fill: $primary-color;
+  }
+}
+
+#icon-magnet {
+  #magnet {
+    fill: $gray-dark;
+  }
+  #magnet-end-2, #magnet-end-1 {
+    fill: $gray-light;
+  }
+  #magnet-bg {
+    fill: $gray-lighter;
+  }
+  #charge {
+    fill: $primary-color;
+  }
+}
+
+#icon-graph {
+  #magnet {
+    fill: $gray-dark;
+  }
+  #magnet-end-2, #magnet-end-1 {
+    fill: $gray-light;
+  }
+  #magnet-bg {
+    fill: $gray-lighter;
+  }
+  #charge {
+    fill: $primary-color;
   }
 }
 

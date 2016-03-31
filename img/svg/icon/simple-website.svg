@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="website" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<circle class="gray-lighter" cx="150" cy="150.2" r="150"/>
+<path class="gray-light" d="M60,101.5v105.8c0,2.5,2,4.5,4.5,4.5h171c2.5,0,4.5-2,4.5-4.5V101.5H60z"/>
+<path class="gray-dark" d="M60,101.8v-9c0-2.5,2-4.5,4.5-4.5h171c2.5,0,4.5,2,4.5,4.5v9H60z"/>
+<path class="gray-light" d="M171.4,98.4H83.6c-0.6,0-1.1-0.5-1.1-1.1v-4.5c0-0.6,0.5-1.1,1.1-1.1h87.8
+	c0.6,0,1.1,0.5,1.1,1.1v4.5C172.5,97.9,172,98.4,171.4,98.4z"/>
+<path class="gray-light" d="M233.2,98.4h-33.5c-0.6,0-1.1-0.5-1.1-1.1v-4.5c0-0.6,0.5-1.1,1.1-1.1h33.5
+	c0.6,0,1.1,0.5,1.1,1.1v4.5C234.4,97.9,233.9,98.4,233.2,98.4z"/>
+<circle class="primary-color" cx="67" cy="94.9" r="1.1"/>
+<circle class="primary-color" cx="70.3" cy="94.9" r="1.1"/>
+<circle class="primary-color" cx="73.7" cy="94.9" r="1.1"/>
+<rect class="gray-lighter" x="88.5" y="134.5" width="79.5" height="48.2"/>
+<rect class="gray-lighter" x="88.5" y="187" width="116.2" height="7.9"/>
+<rect class="gray-lighter" x="178.5" y="134.5" width="26.2" height="22.5"/>
+<rect class="gray-lighter" x="178.5" y="160.2" width="26.2" height="22.5"/>
+<rect class="gray-lighter" x="141" y="119.1" width="18.8" height="5.6"/>
+<rect class="gray-lighter" x="163.8" y="119.1" width="18.8" height="5.6"/>
+<rect class="gray-lighter" x="186" y="119.1" width="18.8" height="5.6"/>
+<circle class="primary-color" cx="94.2" cy="121.4" r="5.6"/>
+</svg>

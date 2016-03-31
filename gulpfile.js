@@ -25,6 +25,7 @@ gulp.task('serve', ['svg', 'fonts', 'sass', 'browserify'], function() {
   
   gulp.watch("scss/**/*.scss", ['sass']);
   gulp.watch("js/main.js", ['browserify']);
+  gulp.watch("img/svg/**/*.svg", ['svg']);
   gulp.watch("./**/*.php").on('change', browserSync.reload);
 
 });
@@ -96,7 +97,8 @@ gulp.task('svg', function () {
         return gulp
             .src('inc/svg.php')
             .pipe(inject(svgs, { transform: fileContents }))
-            .pipe(gulp.dest('inc'));
+            .pipe(gulp.dest('inc'))
+            .pipe(browserSync.stream());
 });
 
 gulp.task('default', ['serve']);

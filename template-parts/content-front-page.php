@@ -29,9 +29,11 @@
 
 <section class="story-board">
   
-  <div class="intro scene">
+  <div id="intro" class="intro scene">
     <div class="graphic">
-      <img width="300" height="300" src="img/graphic.svg" alt="image name">
+      <svg class="animation-scale" width="300" height="300">
+        <use xlink:href="#icon-store" />
+      </svg>
     </div>
     <div class="content">
       <h2>This is your business.</h2>
@@ -39,48 +41,51 @@
     </div>
   </div>
   
-  <div class="scenario scene">
+  <div id="scenario" class="scenario scene">
     <div class="graphic">
-      <img width="300" height="300" src="img/graphic.svg" alt="image name">
+      <svg class="animation-rotate" width="300" height="300">
+        <use xlink:href="#icon-map" />
+      </svg>
     </div>
     <div class="content">
       <h2>These are potential customers.</h2>
-      <p>They search for the internet for services or products they need and get a list of results.</p>
+      <p>They search the internet for services or products and get a list of results.</p>
     </div>
   </div>
   
-  <div class="problem scene">
+  <div id="problem" class="problem scene">
     <div class="graphic">
-      <img width="300" height="300" src="img/graphic.svg" alt="image name">
+      <svg class="animation-scale" width="300" height="300">
+        <use xlink:href="#icon-simple-website" />
+      </svg>
     </div>
     <div class="content">
       <h2>Now here is the issue.</h2>
-      <p>Depending on the quality and content of your site, visitors make a decision of whether or not they want your services or products.</p>
       <p>If you don’t have a business website, the chances of customers finding your business become even slimmer. But you can change this.</p>
     </div>
   </div>
   
-  <div class="solution scene">
+  <div id="solution" class="solution scene">
     <div class="graphic">
-      <img width="300" height="300" src="img/graphic.svg" alt="image name">
+      <svg class="animation-move-up" width="300" height="300">
+        <use xlink:href="#icon-magnet" />
+      </svg>
     </div>
     <div class="content">
       <h2>There is a solution.</h2>
       <p>With years of experience in web development and graphic design, Readily can turn your site into a customer magnet.</p>
-      <p>We have so many services to offer, but you don’t need all of them.</p>
-      <p>Readily tailors our services to meet your needs, that way you only pay for services that will benefit your particular business.</p>
-      <p>To learn learn more about our services, <a href="/readily/services/">click here</a></p>
+      <p>To learn more about our services, <a href="/readily/services/">click here</a>.</p>
     </div>
   </div>
   
-  <div class="results scene">
+  <div id="results" class="results scene">
     <div class="graphic">
-      <img width="300" height="300" src="img/graphic.svg" alt="image name">
-    </div>
+      <svg class="animation-move-right" width="300" height="300">
+        <use xlink:href="#icon-graph" />
+      </svg>    </div>
     <div class="content">
-      <h2>Results are what we provide.</h2>
-      <p>We will track your page visits and give you our professional feedback based on the data collected.</p>
-      <p>Using this data, we can determine what changes need to be made to keep visitors of your site longer and turn visits into actual customers or clients.</p>
+      <h2>Results that matter.</h2>
+      <p>We will track your page visits and data needed to convert visits into actual customers.</p>
     </div>
   </div>
   
