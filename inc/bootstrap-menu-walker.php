@@ -2,15 +2,15 @@
 class Bootstrap_Menu extends Walker {
     var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
     var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-    function start_lvl(&$output, $depth) {
+    function start_lvl(&$output, $depth = 0, $args = array()) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
     }
-    function end_lvl(&$output, $depth) {
+    function end_lvl(&$output, $depth = 0, $args = array()) {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
-    function start_el(&$output, $item, $depth, $args) {
+    function start_el(&$output, $item, $depth = 0, $args = array(),$current_object_id = 0) {
         global $wp_query;
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         $class_names = $value = '';
@@ -32,7 +32,7 @@ class Bootstrap_Menu extends Walker {
         $item_output .= $args->after;
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-    function end_el(&$output, $item, $depth) {
+    function end_el(&$output, $item, $depth = 0, $args = array()) {
         $output .= "</li>\n";
     }
 }

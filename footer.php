@@ -17,11 +17,7 @@
     	</div>
     	<div class="sitemap">
       	<h6>Sitemap</h6>
-      	<ul>
-        	<li><a href="#link">Link</a></li>
-        	<li><a href="#link">Link</a></li>
-        	<li><a href="#link">Link</a></li>
-      	</ul>
+        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_id' => 'footer-nav', 'walker' => new Bootstrap_Menu() ) ); ?>
     	</div>
     	<div class="newsletter">
       	<h6>Sign Up for Our Newsletter</h6>

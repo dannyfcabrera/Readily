@@ -128,3 +128,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Bootstrap menu walker.
  */
 require get_template_directory() . '/inc/bootstrap-menu-walker.php';
+
+/**
+ * Gravity forms filter hooks.
+ */
+require get_template_directory() . '/inc/gravityforms.php';

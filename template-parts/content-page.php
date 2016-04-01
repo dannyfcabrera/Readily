@@ -9,7 +9,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-header">
-		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+  	<?php if (is_page('success')) :
+    	echo '<h1 class="page-title">Thank you '. $_GET["fname"] .'</h1>';
+    else :
+      the_title( '<h1 class="page-title">', '</h1>' ); 
+		endif;
+		?>
 	</header>
 
 	<div class="page-content">
