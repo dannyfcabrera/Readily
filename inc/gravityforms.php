@@ -65,3 +65,31 @@ $form_string = $bootstrapForm;
 
     return $form_string;
 }
+
+
+add_filter( 'gform_get_form_filter_2', 'newsletter_form', 10, 2 );
+function newsletter_form( $form_string, $form ) {
+
+$newsletterForm = '<form class="form-inline" method="post" enctype="multipart/form-data" id="gform_2" action="/readily/newsletter/">
+<div class="form-group">
+  <label class="sr-only" for="input_2_1">Email</label>
+  <input class="form-control" name="input_1" id="input_2_1" type="email" value="" required placeholder="Email">
+</div>
+<div class="form-group">
+  <button class="btn btn-default" type="submit" id="gform_submit_button_2" value="Sign Up" tabindex="2" onclick="if(window[&quot;gf_submitting_2&quot;]){return false;}  if( !jQuery(&quot;#gform_2&quot;)[0].checkValidity || jQuery(&quot;#gform_2&quot;)[0].checkValidity()){window[&quot;gf_submitting_2&quot;]=true;}">Sign Up</button>
+  <input type="hidden" class="gform_hidden" name="is_submit_2" value="1">
+  <input type="hidden" class="gform_hidden" name="gform_submit" value="2">
+  
+  <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+  <input type="hidden" class="gform_hidden" name="state_2" value="WyJbXSIsIjZkNjI3NDg3YjFiMGEwZWM2NTMyNzUwN2NiYzI1ZGFiIl0=">
+  <input type="hidden" class="gform_hidden" name="gform_target_page_number_2" id="gform_target_page_number_2" value="0">
+  <input type="hidden" class="gform_hidden" name="gform_source_page_number_2" id="gform_source_page_number_2" value="1">
+  <input type="hidden" name="gform_field_values" value="">
+</div>
+</form>';
+  
+
+$form_string = $newsletterForm;
+
+    return $form_string;
+}

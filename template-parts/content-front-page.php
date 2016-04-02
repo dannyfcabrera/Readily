@@ -10,7 +10,9 @@
 <section class="jumbotron" role="banner">
 
   <?php if ( has_post_thumbnail() ) {
+    echo '<div itemprop="primaryImageOfPage">';
     the_post_thumbnail();
+    echo '</div>';
   } 
   ?>
   <div class="headline">

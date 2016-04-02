@@ -44,8 +44,13 @@
   </script>
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php 
+/**
+ * Schema Types.
+ */
+require get_template_directory() . '/inc/schema.php';
+?>
+<body <?php echo $ItemType; ?> <?php body_class(); ?>>
   
   <?php require get_template_directory() . '/inc/svg.php'; ?>
   
@@ -53,9 +58,9 @@
   
   <div class="wrapper">
   
-  	<header class="site-header" role="banner">
+  	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
           	
-      <nav class="navbar navbar-fixed-top navbar-default main-navigation" role="navigation">
+      <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar navbar-fixed-top navbar-default main-navigation" role="navigation">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -70,7 +75,7 @@
         				<h1 class="site-title">
                   <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
-                    <svg width='122' height='40' class="logo">
+                    <svg itemprop="logo" width='122' height='40' class="logo">
                       <use xlink:href="#site-logo" />
                     </svg>
                   </a>
@@ -79,7 +84,7 @@
         				<p class="site-title">
                   <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
-                    <svg width='122' height='40' class="logo">
+                    <svg itemprop="logo" width='122' height='40' class="logo">
                       <use xlink:href="#site-logo" />
                     </svg>
                   </a>

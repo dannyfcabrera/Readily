@@ -227,35 +227,6 @@ svg .dark-color {
   }
 }
 
-#icon-magnet {
-  #magnet {
-    fill: $gray-dark;
-  }
-  #magnet-end-2, #magnet-end-1 {
-    fill: $gray-light;
-  }
-  #magnet-bg {
-    fill: $gray-lighter;
-  }
-  #charge {
-    fill: $primary-color;
-  }
-}
-
-#icon-graph {
-  #magnet {
-    fill: $gray-dark;
-  }
-  #magnet-end-2, #magnet-end-1 {
-    fill: $gray-light;
-  }
-  #magnet-bg {
-    fill: $gray-lighter;
-  }
-  #charge {
-    fill: $primary-color;
-  }
-}
 
 /*
 *
@@ -265,15 +236,84 @@ Main Styles
 
 .home #main {
   @include make-xs-column(12);
+  @include make-xs-column-offset(0);
 }
 
 #main {
-  @include make-sm-column(8);
+  @include make-sm-column(7);
+  @include make-sm-column-offset(1);
+  min-height: calc(100vh - 214px);
 }
 
-#sidebar {
-  @include make-sm-column(4);
+.page-header {
+  border: none;
 }
+
+.page-footer {
+  @extend .page-header;
+}
+
+.tab-pane {
+  .list-group-item:first-child {
+    border-radius: 0;
+    border-top: 0;
+  }
+}
+
+article main {
+  @include make-row();
+  .text {
+    @include make-xs-column(12);
+  }
+  .code {
+    @include make-xs-column(12);
+  }
+  .text-figure {
+    @include make-sm-column(6);
+  }
+}
+
+.post-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+figure {
+  
+}
+
+figcaption {
+  padding: 15px;
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+.services {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+}
+
+/*
+*
+Sidebar Styles 
+*
+*/
+
+#sidebar {
+  @include make-sm-column(3);
+  @include make-sm-column-offset(1);
+}
+
+.widget {
+  @extend .page-header;
+}
+
+.widget_search .widget-title {
+  @extend .sr-only;
+}
+
+
 
 /*
 *

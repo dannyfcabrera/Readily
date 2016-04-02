@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-  	<main role id="main" role="main">
+  	<main itemprop="mainContentOfPage" role id="main" role="main">
 
   		<?php
     	

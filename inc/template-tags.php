@@ -10,9 +10,9 @@ if ( ! function_exists( 'readily_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function readily_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published updated" itemprop="datePublished" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time><time class="updated" itemprop="dateModified" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -29,7 +29,7 @@ function readily_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'readily' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><span itemprop="author">' . esc_html( get_the_author() ) . '</span></a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -41,34 +41,34 @@ if ( ! function_exists( 'readily_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function readily_entry_footer() {
+function readily_post_footer() {
   
 	if ( 'post' === get_post_type() ) {
   	
 		$categories_list = get_the_category_list( esc_html__( ', ', 'readily' ) );
 		if ( $categories_list && readily_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'readily' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<div class="cat-links">' . esc_html__( 'Posted in %1$s', 'readily' ) . '</div>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'readily' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'readily' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<div class="tags-links">' . esc_html__( 'Tagged %1$s', 'readily' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'readily' ), esc_html__( '1 Comment', 'readily' ), esc_html__( '% Comments', 'readily' ) );
-		echo '</span>';
+    comments_template();
 	}
+	
+	echo '<div class="publisher sr-only">Published by: <span itemprop="publisher">'. get_bloginfo( 'name' ) .'</span></div>';
 
 	edit_post_link(
 		sprintf(
 			esc_html__( 'Edit %s', 'readily' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			the_title( '<div class="sr-only">"', '"</div>', false )
 		),
-		'<span class="edit-link">',
-		'</span>'
+		'<div class="edit-link btn btn-default">',
+		'</div>'
 	);
 }
 endif;

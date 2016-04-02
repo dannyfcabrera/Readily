@@ -10,7 +10,6 @@ var bootstrap = require('bootstrap-sass');
 // Init
 
 (function($) {
-  
 
 // Skip to content	
 ( function() {
@@ -134,6 +133,15 @@ $.each( scene, function() {
 
 
 // ScrollMagic End
+
+// Service Tabs
+
+$('.services .nav-tabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+// Service Tabs End
     
   
   // end ready

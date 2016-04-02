@@ -7,7 +7,7 @@
 
 ?>
 
-  	<footer id="footer" role="contentinfo">
+  	<footer itemscope itemtype="http://schema.org/WPFooter" id="footer" role="contentinfo">
     	<div class="contact-info">
       	<h6>Contact Us</h6>
       	<ul>
@@ -21,18 +21,11 @@
     	</div>
     	<div class="newsletter">
       	<h6>Sign Up for Our Newsletter</h6>
-      	<form>
-        	<input type="email" required placeholder="email">
-        	<button class="btn btn-default" type="submit">Sign Up</button>
-      	</form>
+      	<?php echo do_shortcode( '[gravityform id="2" title="false" description="false" ajax="true"]' );?>
     	</div>
     	<div class="social-media">
       	<h6>Follow Us</h6>
-      	<ul>
-        	<li><a href="#link">Link</a></li>
-        	<li><a href="#link">Link</a></li>
-        	<li><a href="#link">Link</a></li>
-      	</ul>
+      	<?php get_template_part( 'template-parts/social'); ?>
       	<p>&copy; <?php echo date("Y") ?> <?php bloginfo( 'name' ); ?></p>
     	</div>
 	  </footer>

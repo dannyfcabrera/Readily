@@ -133,3 +133,13 @@ require get_template_directory() . '/inc/bootstrap-menu-walker.php';
  * Gravity forms filter hooks.
  */
 require get_template_directory() . '/inc/gravityforms.php';
+
+/**
+ * ACF Options Page.
+ */
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page('Theme Settings');
+
+}
