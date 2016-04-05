@@ -12,7 +12,7 @@ if ( ! function_exists( 'readily_posted_on' ) ) :
 function readily_posted_on() {
 	$time_string = '<time class="entry-date published updated" itemprop="datePublished" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time><time class="updated" itemprop="dateModified" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time> | Updated on <time class="updated" itemprop="dateModified" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -24,7 +24,7 @@ function readily_posted_on() {
 
 	$posted_on = sprintf(
 		esc_html_x( 'Posted on %s', 'post date', 'readily' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		$time_string
 	);
 
 	$byline = sprintf(
@@ -56,7 +56,7 @@ function readily_post_footer() {
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	if ( is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
     comments_template();
 	}
 	

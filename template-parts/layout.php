@@ -18,7 +18,7 @@
     
       <div class="code post-block">
         <?php	the_sub_field('caption'); ?>
-        <pre><code><?php the_sub_field('code'); ?></code></​pre>
+        <pre><code><?php the_sub_field('code');?></code></​pre>
       </div>
 
     <?php endif; ?>

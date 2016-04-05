@@ -143,3 +143,33 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('Theme Settings');
 
 }
+
+/**
+ * Schema Types.
+ */
+require get_template_directory() . '/inc/schema.php';
+
+/**
+ * Custom Login Logo.
+ */
+function custom_login_logo() {
+    echo '<style type="text/css">
+        body, html {background-color: #ffffff;}
+        .login h1 a { background-image:url('. get_stylesheet_directory_uri() .'/img/svg/site/logo.svg); background-size: contain; width: 100%; }
+        .login #login_error, .login .message { border-left-color: #BB0002; }
+        .wp-core-ui .button-primary { background-color: #BB0002; color: #fff; text-shadow: none; box-shadow: none; border: none; }
+        .wp-core-ui .button-primary:hover { background-color: #000000; }
+    </style>';
+}
+
+add_action('login_head', 'custom_login_logo');
+
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Readily | Web Development & Marketing';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );

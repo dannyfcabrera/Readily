@@ -11,13 +11,9 @@
     	<div class="contact-info">
       	<h6>Contact Us</h6>
       	<ul>
-        	<li>Phone: 908-752-7651</li>
-        	<li>Email: info@bereadily.com</li>
+        	<li>Phone: <?php the_field('phone','option'); ?></li>
+        	<li>Email: <?php the_field('email','option'); ?></li>
       	</ul>
-    	</div>
-    	<div class="sitemap">
-      	<h6>Sitemap</h6>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_id' => 'footer-nav', 'walker' => new Bootstrap_Menu() ) ); ?>
     	</div>
     	<div class="newsletter">
       	<h6>Sign Up for Our Newsletter</h6>

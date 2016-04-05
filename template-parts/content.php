@@ -32,12 +32,19 @@
 		<?php
 		endif; ?>
 	</header>
-
+  
+  <?php if (is_single()) : ?>
 	<main itemprop="mainEntity" class="page-content">
+       
     <?php get_template_part( 'template-parts/layout' ); ?>
+
 	</main>
+  <?php endif; ?>
 
 	<footer class="page-footer">
+    <?php if (! is_single()) :
+        echo '<a class="btn btn-default" href="'. get_the_permalink() .'">View Post</a>';
+      endif; ?>
 		<?php readily_post_footer(); ?>
 	</footer>
 </article>

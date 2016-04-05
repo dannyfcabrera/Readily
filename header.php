@@ -45,12 +45,9 @@
 <?php wp_head(); ?>
 </head>
 <?php 
-/**
- * Schema Types.
- */
-require get_template_directory() . '/inc/schema.php';
+
 ?>
-<body <?php echo $ItemType; ?> <?php body_class(); ?>>
+<body <?php schema_type(); ?> <?php body_class(); ?>>
   
   <?php require get_template_directory() . '/inc/svg.php'; ?>
   
